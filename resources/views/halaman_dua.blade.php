@@ -1,17 +1,13 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hasil Panen Dusun Kucur</title>
 
-    <!-- Tailwind CSS & JS via Vite -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <!-- Font Lucu dari Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         .font-lucu {
@@ -19,59 +15,94 @@
         }
     </style>
 </head>
-<body class="bg-emerald-50 text-slate-800 min-h-screen flex flex-col justify-between items-center p-4 sm:p-6">
 
-    <!-- Header Navigasi -->
-    <header class="w-full max-w-3xl flex justify-between items-center py-4 border-b border-emerald-200">
-        <a href="{{ route('halaman.satu') }}" onclick="playAudio()" class="font-lucu text-emerald-700 hover:text-emerald-900 font-bold text-sm transition transform hover:-translate-x-1 inline-block">
-            &larr; Kembali
-        </a>
-        <span class="font-lucu text-xs text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full animate-pulse">
-            Dusun Kucur
-        </span>
-    </header>
+<body class="bg-emerald-50 text-slate-800 min-h-screen flex flex-col justify-between">
 
-    <!-- Konten Utama -->
-    <main class="w-full max-w-3xl my-auto py-6 space-y-6">
-        
-        <!-- Deskripsi Desa -->
-        <section class="bg-white p-6 rounded-xl border border-emerald-100 shadow-sm space-y-2">
-            <h2 class="font-lucu text-2xl font-bold text-emerald-900">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-3xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="{{ route('halaman.satu') }}"
+               class="font-lucu text-emerald-700 text-xl font-bold">
+                🌿 Kucur
+            </a>
+
+            <div class="flex gap-6">
+                <a href="{{ route('halaman.satu') }}"
+                   class="font-lucu text-emerald-700 text-sm hover:text-emerald-900 transition">
+                    Home
+                </a>
+
+                <a href="{{ route('halaman.dua') }}"
+                   class="font-lucu text-emerald-700 text-sm font-semibold">
+                    About
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="w-full max-w-3xl mx-auto px-4 sm:px-6 pt-28 pb-10">
+
+        <section class="bg-white rounded-3xl shadow-md p-6 sm:p-8 mb-8">
+            <h1 class="font-lucu text-3xl sm:text-4xl font-bold text-emerald-700 mb-4">
                 Tentang Desa Sumberrejo Dusun Kucur 🌾
-            </h2>
-            <p class="text-slate-600 text-sm leading-relaxed">
-                Dusun Kucur adalah wilayah di Desa Sumberrejo yang terkenal dengan suasana yang asri, tanah yang subur, serta masyarakat yang ramah. Hasil panen dari perkebunan warga menjadi kebanggaan utama dusun ini.
+            </h1>
+
+            <p class="leading-relaxed text-slate-600">
+                Dusun Kucur merupakan salah satu dusun yang berada di Desa
+                Sumberrejo. Dusun ini memiliki berbagai potensi alam dan hasil
+                pertanian yang menjadi bagian dari kehidupan masyarakat.
+                Beberapa hasil panen khas yang dapat ditemukan di Dusun Kucur
+                adalah kopi dan durian yang memiliki ciri khas tersendiri.
             </p>
         </section>
 
-        <!-- Kartu Hasil Panen -->
-        <section class="space-y-4">
-            <h3 class="font-lucu text-xl font-bold text-emerald-900">
+        <section>
+            <h2 class="font-lucu text-3xl font-bold text-emerald-700 text-center mb-6">
                 Hasil Panen Khas 🧺
-            </h3>
+            </h2>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                
-                <!-- Panen Kopi Bergerak Terangkat saat Hover -->
-                <div class="bg-white rounded-xl border border-emerald-100 overflow-hidden shadow-sm p-4 space-y-3 transition duration-300 transform hover:-translate-y-2 hover:shadow-lg group">
-                    <div class="overflow-hidden rounded-lg">
-                        <img src="{{ asset('images/proyek1.png') }}" alt="Kopi" class="w-full h-40 object-cover transition duration-500 group-hover:scale-110">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+                <div class="group bg-white rounded-3xl shadow-md overflow-hidden
+                            hover:-translate-y-2 hover:shadow-lg transition duration-300">
+
+                    <div class="overflow-hidden">
+                        <img src="{{ asset('images/proyek1.png') }}"
+                             class="w-full h-56 object-cover group-hover:scale-110 transition duration-500">
                     </div>
-                    <h4 class="font-lucu text-lg font-bold text-slate-800">☕ Kopi Khas Kucur</h4>
-                    <p class="text-slate-600 text-xs">
-                        Biji kopi pilihan yang dipetik langsung dari kebun warga dengan aroma yang khas dan nikmat.
-                    </p>
+
+                    <div class="p-5">
+                        <h3 class="font-lucu text-2xl font-semibold text-emerald-700 mb-2">
+                            ☕ Kopi Khas Kucur
+                        </h3>
+
+                        <p class="text-slate-600 leading-relaxed">
+                            Kopi merupakan salah satu hasil panen yang menjadi
+                            potensi khas Dusun Kucur. Kopi dari daerah ini
+                            memiliki cita rasa dan aroma yang khas.
+                        </p>
+                    </div>
                 </div>
 
-                <!-- Panen Durian Bergerak Terangkat saat Hover -->
-                <div class="bg-white rounded-xl border border-emerald-100 overflow-hidden shadow-sm p-4 space-y-3 transition duration-300 transform hover:-translate-y-2 hover:shadow-lg group">
-                    <div class="overflow-hidden rounded-lg">
-                        <img src="{{ asset('images/proyek2.png') }}" alt="Durian" class="w-full h-40 object-cover transition duration-500 group-hover:scale-110">
+                <div class="group bg-white rounded-3xl shadow-md overflow-hidden
+                            hover:-translate-y-2 hover:shadow-lg transition duration-300">
+
+                    <div class="overflow-hidden">
+                        <img src="{{ asset('images/proyek2.png') }}"
+                             class="w-full h-56 object-cover group-hover:scale-110 transition duration-500">
                     </div>
-                    <h4 class="font-lucu text-lg font-bold text-slate-800">🍈 Durian Khas Kucur</h4>
-                    <p class="text-slate-600 text-xs">
-                        Durian asli Dusun Kucur dengan daging buah manis dan tebal yang selalu dinanti saat musim panen.
-                    </p>
+
+                    <div class="p-5">
+                        <h3 class="font-lucu text-2xl font-semibold text-emerald-700 mb-2">
+                            🍈 Durian Khas Kucur
+                        </h3>
+
+                        <p class="text-slate-600 leading-relaxed">
+                            Durian juga menjadi salah satu hasil panen khas
+                            Dusun Kucur. Buah durian dikenal dengan rasa yang
+                            manis, aroma khas, dan menjadi salah satu potensi
+                            hasil pertanian masyarakat.
+                        </p>
+                    </div>
                 </div>
 
             </div>
@@ -79,22 +110,23 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="w-full max-w-3xl text-center py-4 text-slate-500 text-xs">
-        &copy; {{ date('Y') }} Desa Sumberrejo Dusun Kucur.
+    <footer class="text-center px-6 py-5 text-sm bg-emerald-100">
+        <p class="font-lucu text-emerald-700">
+            © {{ date('Y') }} Desa Sumberrejo Dusun Kucur
+        </p>
     </footer>
 
-    <!-- Audio Player & Script -->
-    <audio id="clickSound" src="{{ asset('audio/click.mp3') }}" preload="auto"></audio>
+    <audio id="clickSound">
+        <source src="{{ asset('audio/click.mp3') }}" type="audio/mpeg">
+    </audio>
 
     <script>
         function playAudio() {
-            const sound = document.getElementById('clickSound');
-            if (sound) {
-                sound.currentTime = 0;
-                sound.play().catch(e => console.log(e));
-            }
+            const audio = document.getElementById('clickSound');
+            audio.currentTime = 0;
+            audio.play();
         }
     </script>
+
 </body>
 </html>
